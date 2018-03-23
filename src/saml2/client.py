@@ -190,8 +190,8 @@ class Saml2Client(Base):
         for entity_id in entity_ids:
             logger.debug("Logout from '%s'", entity_id)
             # for all where I can use the SOAP binding, do those first
-            for binding in [BINDING_SOAP, BINDING_HTTP_POST,
-                            BINDING_HTTP_REDIRECT]:
+            for binding in [BINDING_HTTP_REDIRECT, 
+                            BINDING_SOAP, BINDING_HTTP_POST]:
                 if expected_binding and binding != expected_binding:
                     continue
                 try:
